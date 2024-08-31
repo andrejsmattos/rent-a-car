@@ -1,0 +1,19 @@
+footer {
+  background-color: #004f4e;
+  color: #15ecec;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  p {
+    padding: 0.25rem 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #15ecec;
+  }
+}
