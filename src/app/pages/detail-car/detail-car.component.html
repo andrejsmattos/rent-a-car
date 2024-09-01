@@ -1,1 +1,18 @@
 
+<h1>Detalhes do Carro</h1>
+<div class="container">
+  <mat-card class="car-details-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>{{ car.name }}</mat-card-title>
+      <mat-card-subtitle>{{ car.type }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="car.image" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>{{ car.year }}</p>
+      <p>R${{ car.pricePerDay }}</p>
+      <p>{{ car.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button class="btn" (click)="favoritarCarro()">Favoritar Carro</button>
+    </mat-card-actions>
+</mat-card>
