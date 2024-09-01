@@ -3,13 +3,15 @@ import { CarsService } from '../../services/cars.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-detail-car',
   standalone: true,
   imports: [
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ],
   templateUrl: './detail-car.component.html',
   styleUrl: './detail-car.component.scss'
@@ -34,7 +36,20 @@ export class DetailCarComponent {
     })
 
   }
-  favoritarCarro(){};
+
+  favoritar(){
+    let isFavorito = localStorage.getItem('favoritos');
+    if(isFavorito){
+      let favoritos = JSON.parse(isFavorito);
+      favoritos.push(this.car);
+      localStorage.setItem('favoritos',JSON.stringify(favoritos));
+      alert('Carro favoritado com sucesso');
+    } else {
+      localStorage.setItem('favoritos', "[]");
+      this.favoritar();
+    }
+  }
 
   alugar(){}
+  
 }
