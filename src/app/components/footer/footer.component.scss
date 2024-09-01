@@ -2,11 +2,12 @@ footer {
   background-color: #004f4e;
   color: #15ecec;
   width: 100%;
-  position: fixed;
-  bottom: 0;
+  // position: fixed;
+  // bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
   
   p {
     padding: 0.25rem 0;

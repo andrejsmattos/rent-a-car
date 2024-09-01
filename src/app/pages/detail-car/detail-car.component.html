@@ -12,7 +12,8 @@
       <p>R${{ car.pricePerDay }}</p>
       <p>{{ car.description }}</p>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions class="car-details-btn">
       <button mat-stroked-button class="btn" (click)="favoritarCarro()">Favoritar Carro</button>
+      <button mat-stroked-button class="btn" (click)="alugar()">Alugar Carro</button>
     </mat-card-actions>
 </mat-card>
