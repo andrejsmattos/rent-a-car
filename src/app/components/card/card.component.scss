@@ -9,5 +9,20 @@
   img {
     width: 100%;
   }
+
+  .image-container {
+    position: relative;
+    width: 100%;
+
+    .fav-icon {
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      color: red;
+      background-color: rgba(255, 255, 255, 0.897);
+      border-radius: 50%;
+      padding: 4px;
+    }
+  }
 }
 
