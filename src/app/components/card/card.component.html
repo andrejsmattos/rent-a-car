@@ -6,11 +6,11 @@
     <mat-card-subtitle>{{ car.type }}</mat-card-subtitle>
   </mat-card-header>
   <div class="image-container">
-    <img mat-card-image [src]="car.image" alt="Photo of a Shiba Inu">
+    <img mat-card-image [src]="car.image" alt="{{ car.name }}">
     <div *ngIf="car.isFavorito"><mat-icon fontIcon="favorite" class="fav-icon"></mat-icon></div>
   </div>
   <mat-card-content>
-    <p>{{ car.year }}</p>
+    <p>{{ car.year | date: 'yyyy' }}</p>
     <p>R${{ car.pricePerDay }}</p>
   </mat-card-content>
   <mat-card-actions class="btn-container">

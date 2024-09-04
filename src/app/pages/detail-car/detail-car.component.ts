@@ -37,19 +37,11 @@ export class DetailCarComponent {
 
   }
 
-  favoritar(){
-    let isFavorito = localStorage.getItem('favoritos');
-    if(isFavorito){
-      let favoritos = JSON.parse(isFavorito);
-      favoritos.push(this.car);
-      localStorage.setItem('favoritos',JSON.stringify(favoritos));
-      alert('Carro favoritado com sucesso');
-    } else {
-      localStorage.setItem('favoritos', "[]");
-      this.favoritar();
-    }
+  favoritar() {
+    this.carsService.favoritar(this.car);
   }
 
+  //TODO
   alugar(){}
   
 }

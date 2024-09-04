@@ -39,8 +39,8 @@ export class CardComponent {
     this.carsService.lista().subscribe({
       next: (cars) => {
         this.cars = cars;
-        this.carregarFavoritos();
-        this.marcarFavorito(); // Adicione essa linha
+        this.carsService.carregarFavoritos();
+        this.carsService.marcarFavorito(this.cars);
       },
       error: (error) => {
         console.error(error);
@@ -48,21 +48,7 @@ export class CardComponent {
     });
   }
 
-  carregarFavoritos() {
-    let isFavorito = localStorage.getItem('favoritos');
-    isFavorito ? (this.favoritos = JSON.parse(isFavorito)) : [];
-  }
-
-  marcarFavorito() {
-    this.cars.forEach((car: any) => {
-      car.isFavorito = this.favoritos.some(
-        (favorito: any) => favorito.id === car.id
-      );
-    });
-  }
-
   redirectTo(idCar: number) {
-    console.log(idCar);
     this.router.navigateByUrl(`/lista/${idCar}`);
   }
 }

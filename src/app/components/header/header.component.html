@@ -1,5 +1,11 @@
 
 <mat-toolbar class="menu">
-  <a routerLink="">Home</a>
-  <a routerLink="/lista">Carros</a>
+  <div class="nav-links">
+    <a routerLink="">Home</a>
+    <!-- <a routerLink="/favoritos">Favoritos</a> -->
+  </div>
+  <div class="fav-container">
+    <mat-icon class="fav-icon">favorite</mat-icon>
+    <span class="fav-count" >{{ this.qtdFavoritos }}</span>
+  </div>
 </mat-toolbar>

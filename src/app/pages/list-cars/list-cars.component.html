@@ -1,1 +1,10 @@
-<app-card />
+<form class="example-form" [formGroup]="buscaCarroForm" (ngSubmit)="buscaCarro()">
+  <div class="example-full-width">
+    <mat-label>Buscar por modelo ou categoria</mat-label>
+    <input matInput placeholder="Ex. Civic ou Hatch" formControlName="buscaInput">
+    <button mat-stroked-button type="submit">Buscar</button>
+  </div>
+</form>
+
+
+<app-card *ngFor="let carro of carros" [car]="carro"></app-card>
